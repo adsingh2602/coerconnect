@@ -1,14 +1,10 @@
 import 'dart:async';
-
 import 'package:coreconnect/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {  
   @override
   State<SplashScreen> createState() => _SplashScreenState();
-
-
-
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -21,11 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       MaterialPageRoute(
         builder: (context) => LoginPage())
       );
-
     });
-
-  
-
   }
 
   @override
@@ -39,9 +31,6 @@ class _SplashScreenState extends State<SplashScreen> {
           color: Colors.white
         ),)),
       ),
-
     );
-
-  
   }
 }
