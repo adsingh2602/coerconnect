@@ -1,6 +1,7 @@
-import 'package:coreconnect/Student/Attendance.dart';
-import 'package:coreconnect/Student/Dashboard.dart';
-import 'package:coreconnect/Student/Profile.dart';
+
+import 'package:coreconnect/screens/Student/Attendance.dart';
+import 'package:coreconnect/screens/Student/Dashboard.dart';
+import 'package:coreconnect/screens/Student/Profile.dart';
 import 'package:flutter/material.dart';
 
 class StudentScreen extends StatefulWidget {
