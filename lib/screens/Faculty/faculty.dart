@@ -52,7 +52,7 @@ class _FacultyScreenState extends State<FacultyScreen> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.blue,
+        selectedItemColor:  const Color.fromRGBO(0, 0, 139, 1),
         // backgroundColor: Colors.blue, // Set the background color here
         unselectedItemColor: Colors.grey, // Set the unselected item color
       ),

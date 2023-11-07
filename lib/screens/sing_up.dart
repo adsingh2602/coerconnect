@@ -1,10 +1,9 @@
-
-import 'package:coreconnect/Student/students.dart';
-import 'package:coreconnect/screens/Faculty/faculty.dart';
-import 'package:coreconnect/screens/login.dart';
-import 'package:coreconnect/widgets/form_container_widget.dart';
-
 import 'package:flutter/material.dart';
+import '../Student/students.dart';
+import '../widgets/form_container_widget.dart';
+import 'Faculty/faculty.dart';
+import 'login.dart';
+
 
 
 
@@ -37,7 +36,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("SignUp"),
+        title: Text("COERConnect"),
+        backgroundColor: Colors.red,
       ),
       body: Center(
         child: Padding(
@@ -109,7 +109,7 @@ controller: _passwordController,
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.red,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
@@ -129,7 +129,7 @@ controller: _passwordController,
                         Navigator.pushAndRemoveUntil(
                             context, MaterialPageRoute(builder: (context) => LoginPage()), (route) => false);
                       },
-                      child: Text("Login", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),))
+                      child: Text("Login", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold),))
                 ],
               )
             ],

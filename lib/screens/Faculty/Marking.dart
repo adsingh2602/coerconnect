@@ -20,6 +20,8 @@ class _AttendanceScreenState extends State<AttendanceMarking> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Take Attendance'),
+                backgroundColor: Colors.red,
+
       ),
       body: ListView.builder(
         itemCount: students.length,

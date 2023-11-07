@@ -5,42 +5,35 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text('Dashboard'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildSectionTitle('Courses'),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildSectionTitle('Courses'),
 
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/courseList'); // Navigates to another screen
-              },
-              child: _buildCourseCard('Course 1'),
-            ),
-            // _buildCourseCard('Course 2'),
-            GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/courseList'); // Navigates to another screen
-              },
-              child: _buildCourseCard('Course 2'),
-            ),
-            
+              _buildCourseCard(context, 'DSA', Icons.book),
+              _buildCourseCard(context, 'OOps', Icons.book),
+              _buildCourseCard(context, 'Python Programming', Icons.book),
+              _buildCourseCard(context, 'Java Programming', Icons.book),
 
-            SizedBox(height: 20.0),
+              SizedBox(height: 20.0),
 
-            _buildSectionTitle('Assignments'),
-            _buildAssignmentCard('Assignment 1'),
-            _buildAssignmentCard('Assignment 2'),
+              _buildSectionTitle('Assignments'),
+              _buildAssignmentCard('Assignment 1 {OOps}'),
+              _buildAssignmentCard('Assignment 2 {DSA}'),
 
-            SizedBox(height: 20.0),
+              SizedBox(height: 20.0),
 
-            _buildSectionTitle('Notifications'),
-            _buildNotificationCard('Notification 1'),
-            _buildNotificationCard('Notification 2'),
-          ],
+              _buildSectionTitle('Notifications'),
+              _buildNotificationCard('Assignment 1 {OOps}', Icons.notifications, '2023-11-07'),
+              _buildNotificationCard('Assignment 2 {DSA}', Icons.notifications, '2023-11-08'),
+            ],
+          ),
         ),
       ),
     );
@@ -56,26 +49,52 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCourseCard(String courseName) {
+  Widget _buildCourseCard(BuildContext context, String courseName, IconData icon) {
     return Card(
+      elevation: 3,
       child: ListTile(
+        leading: Icon(icon, color: Colors.blue),
         title: Text(courseName),
+        onTap: () {
+          // Navigator.pushNamed(context, '/courseList');
+        },
       ),
     );
   }
 
   Widget _buildAssignmentCard(String assignmentName) {
     return Card(
+      elevation: 3,
       child: ListTile(
+        leading: Icon(Icons.assignment, color: Colors.orange),
         title: Text(assignmentName),
       ),
     );
   }
 
-  Widget _buildNotificationCard(String notificationText) {
+  Widget _buildNotificationCard(String notificationText, IconData icon, String date) {
     return Card(
+      elevation: 3,
       child: ListTile(
-        title: Text(notificationText),
+        leading: Icon(icon, color: Colors.green),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              notificationText,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 5.0),
+            Text(
+              date,
+              style: TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

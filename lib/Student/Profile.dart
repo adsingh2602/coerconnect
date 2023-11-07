@@ -1,6 +1,17 @@
+
+import 'package:coreconnect/screens/login.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {
+
+  void _handleLogout(BuildContext context) {
+    // Navigate to the login screen and remove all previous routes from the stack
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()), 
+      (route) => false,
+    );
+  }
   @override
   Widget build(BuildContext context) {
     final String studentName = "Amrdeep Singh";
@@ -11,7 +22,15 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: Text("Student Profile"),
+        actions: <Widget>[
+          // Add a logout button
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () => _handleLogout(context), // Call the logout function
+          ),
+        ],
       ),
       body: Center(
         child: Card(
@@ -80,3 +99,4 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+

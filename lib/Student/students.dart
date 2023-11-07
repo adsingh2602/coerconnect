@@ -32,11 +32,12 @@ class _FacultyScreenState extends State<StudentScreen> {
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         
-        items: const [
+        items:  const [
           BottomNavigationBarItem(
             icon: Icon(Icons.dashboard),
             label: 'Dashboard',
-            backgroundColor: Colors.white
+            backgroundColor: Colors.white,
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -52,7 +53,7 @@ class _FacultyScreenState extends State<StudentScreen> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
-        selectedItemColor: Colors.blue,
+        // selectedItemColor:  const Color.fromRGBO(0, 0, 139, 1),
         // backgroundColor: Colors.blue, // Set the background color here
         unselectedItemColor: Colors.grey, // Set the unselected item color
       ),

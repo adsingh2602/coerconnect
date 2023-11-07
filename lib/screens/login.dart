@@ -1,9 +1,9 @@
-
-import 'package:coreconnect/Student/students.dart';
-import 'package:coreconnect/screens/Faculty/faculty.dart';
-import 'package:coreconnect/screens/sing_up.dart';
-import 'package:coreconnect/widgets/form_container_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../Student/students.dart';
+import '../widgets/form_container_widget.dart';
+import 'Faculty/faculty.dart';
+import 'sing_up.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -37,7 +37,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login"),
+        title: Text("COERConnect"),
+        backgroundColor: Colors.red,
       ),
       body: Center(
         child: Padding(
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.blue,
+                    color: Colors.red,
                     borderRadius: BorderRadius.circular(10),
                   ),                 
                   child: Center(child:Text("Login",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),)),
@@ -110,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                       onTap: (){
                         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignUpPage()), (route) => false);
                       },
-                      child: Text("Sign Up",style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold),))
+                      child: Text("Sign Up",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),))
                 ],
               )
 
