@@ -6,6 +6,7 @@ class ProfileScreen extends StatelessWidget {
   void _handleLogout(BuildContext context) {
     // Navigate to the login screen and remove all previous routes from the stack
     Navigator.pushAndRemoveUntil(
+
       context,
       MaterialPageRoute(builder: (context) => LoginPage()), 
       (route) => false,
