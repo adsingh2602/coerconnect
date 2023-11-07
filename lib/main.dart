@@ -1,7 +1,4 @@
-
-import 'package:coreconnect/screens/Faculty/faculty.dart';
-import 'package:coreconnect/screens/login.dart';
-import 'package:coreconnect/Student/students.dart';
+import 'package:coreconnect/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'COERConnect',
-      home: LoginPage(),
+      home: SplashScreen(),
       
       debugShowCheckedModeBanner: false,
     );

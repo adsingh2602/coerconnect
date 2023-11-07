@@ -1,7 +1,8 @@
+import 'package:coreconnect/screens/Student/students.dart';
 import 'package:flutter/material.dart';
 import '../widgets/form_container_widget.dart';
 import 'Faculty/faculty.dart';
-import 'Student/students.dart';
+
 import 'sing_up.dart';
 
 class LoginPage extends StatefulWidget {
